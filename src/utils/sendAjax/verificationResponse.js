@@ -25,7 +25,6 @@ export default class VerificationResponse {
             if (!this.err) {
                 // 根据实际开发接口,可做相应的逻辑判断,登录状态等等
                 if (this.res.body.status === 232) {
-                    console.log(this.props);
                     history.push('/login', { some: 'state' })
                 }
                 return this.response(this.res.body, null);

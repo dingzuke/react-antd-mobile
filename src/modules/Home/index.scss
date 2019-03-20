@@ -1,9 +1,11 @@
 /* @import url(//at.alicdn.com/t/font_1078057_h88wfa0ccus.css); */
 .modle {
   text-align: center;
-  .title{
-    color: blue;
+  .tabBarPosition{
+    position: fixed;
+    bottom: 0;
   }
+
   :global(.am-tab-bar){
     position: fixed;
     bottom: 0;
