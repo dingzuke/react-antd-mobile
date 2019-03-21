@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NoticeBar, Stepper, List, Button, WhiteSpace, WingBlank } from 'antd-mobile';
 import { history } from 'src/utils/router';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
 import Demo1 from './demo1';
 import Demo2 from './demo2';
 
@@ -55,10 +55,12 @@ class Page2 extends Component {
         <Button onClick={() => this.changeRouter('/home/demo1')} type="primary" inline size="small" style={{ marginRight: '4px' }}>路由嵌套1</Button>
         <Button onClick={() => this.changeRouter('/home/demo2')} type="primary" inline size="small">路由嵌套2</Button>
         <div>
-          <Switch>
-            <Route path="/demo1" component={Demo1} />
-            <Route extra path="home/demo2" component={Demo2} />
-          </Switch>
+          <Router history={history}>
+            <Switch>
+              <Route extra path="/home/demo1" component={Demo1} />
+              <Route extra path="/home/demo2" component={Demo2} />
+            </Switch>
+          </Router>
         </div>
       </WingBlank>
     );
@@ -67,7 +69,6 @@ class Page2 extends Component {
    * 子路由 跳转
    */
   changeRouter = (name) => {
-      console.log(name);
       history.push(name);
   }
   /**
