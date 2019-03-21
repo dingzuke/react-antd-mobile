@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Route, Router, Switch, Redirect} from 'react-router-dom';
+import { Route, Router, Switch, Redirect } from 'react-router-dom';
 import { history } from 'src/utils/router';
-import { LocaleProvider } from "antd-mobile";
+import { LocaleProvider } from 'antd-mobile';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import modules from './modules';
 import { reducers } from 'src/utils/myRedux';
 
 const store = createStore(reducers,
-  window['__REDUX_DEVTOOLS_EXTENSION__'] && window['__REDUX_DEVTOOLS_EXTENSION__']()
+    window['__REDUX_DEVTOOLS_EXTENSION__'] && window['__REDUX_DEVTOOLS_EXTENSION__']()
 );
 
 // 国际化 --- 语言包配置(默认中文)
@@ -24,8 +24,8 @@ class App extends Component {
         <LocaleProvider locale={language}>
           <Router history={history}>
               <Switch>
-                  <Route  path="/home" component={modules.Home} />
-                  <Route  path="/login" component={modules.Login} />
+                  <Route path="/home" component={modules.Home} />
+                  <Route path="/login" component={modules.Login} />
                   <Redirect path="/" to={{ pathname: '/home' }} />
               </Switch>
           </Router>

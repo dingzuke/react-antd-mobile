@@ -5,7 +5,7 @@ import VerificationResponse from './verificationResponse';
  * 请求域名
  */
 const getHost = () => {
-    return 'http://www.dev.com'
+    return 'http://www.dev.com';
     // return window['$$_env'].URL;
 };
 
@@ -26,7 +26,7 @@ const sendAjax = (type, uri, params) => {
             .set(options)[type === 'get' ? 'query' : 'send'](params)
             .end((err, res) => {
                 resolve(new VerificationResponse(res, err).verification());
-            })
+            });
             // .timeout(3000);
     });
 };

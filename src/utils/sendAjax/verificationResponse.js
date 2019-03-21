@@ -1,4 +1,4 @@
-import {history} from 'src/utils/router';
+import { history } from 'src/utils/router';
 import { Toast } from 'antd-mobile';
 
 /** 返回结果处理 */
@@ -13,7 +13,7 @@ export default class VerificationResponse {
         return {
             res,
             err,
-        }
+        };
     }
     /** 错误提示 */
     errorTip = (message) => {
@@ -25,7 +25,7 @@ export default class VerificationResponse {
             if (!this.err) {
                 // 根据实际开发接口,可做相应的逻辑判断,登录状态等等
                 if (this.res.body.status === 232) {
-                    history.push('/login', { some: 'state' })
+                    history.push('/login', { some: 'state' });
                 }
                 return this.response(this.res.body, null);
             } else {

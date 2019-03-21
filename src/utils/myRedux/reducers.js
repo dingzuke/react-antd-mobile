@@ -6,7 +6,7 @@ const initialState = () => {
     return JSON.parse(window.localStorage.getItem('$$/User/info')) || {
         enthusiasmLevel: 2,
         describe: 'ant-mobile + react + redux, 个人github了解更多...',
-    }
+    };
 };
 
 // actions
