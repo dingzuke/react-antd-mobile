@@ -1,6 +1,6 @@
 import * as superagent from 'superagent';
 import VerificationResponse from './verificationResponse';
-import { store } from 'src/utils/myRedux';
+import { store, actions } from 'src/utils/myRedux';
 /**
  * 请求域名
  */
@@ -24,6 +24,8 @@ const sendAjax = (type, uri, params) => {
         superagent[type](getHost() + uri)
             .set(options)[type === 'get' ? 'query' : 'send'](params)
             .end((err, res) => {
+                // 示例: 修改redux 数据
+                store.dispatch(actions.setEnthusiasm({ enthusiasmLevel: 1 }));
                 resolve(new VerificationResponse(res, err).verification());
             });
             // .timeout(3000);
