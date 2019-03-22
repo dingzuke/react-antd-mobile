@@ -5,4 +5,5 @@
 ### 安装包 `npm install`
 ### 开始 `npm start`
 
-### 打包部署:`npm run build`
+### 打包部署:`npm run build production` 打包生产production环境的配置读取
+### 打包部署:`npm run build test` 打包test环境的配置读取

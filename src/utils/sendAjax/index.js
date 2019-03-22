@@ -1,12 +1,11 @@
 import * as superagent from 'superagent';
 import VerificationResponse from './verificationResponse';
-
+import { store } from 'src/utils/myRedux';
 /**
  * 请求域名
  */
 const getHost = () => {
-    return 'http://www.dev.com';
-    // return window['$$_env'].URL;
+    return process.env.ENV_CONFIG.DOMAIN;
 };
 
 /**
@@ -19,7 +18,7 @@ const sendAjax = (type, uri, params) => {
     return new Promise((resolve) => {
         const options = {
             'Content-Type': 'application/json',
-            'Authorization': '9999'
+            'Authorization': store.getState().enthusiasmLevel,
         };
 
         superagent[type](getHost() + uri)

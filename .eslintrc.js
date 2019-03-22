@@ -68,7 +68,7 @@ module.exports = {
         // @off 几乎不会遇到这种场景
         'no-control-regex': 'off',
         // @fixable 禁止使用 debugger
-        'no-debugger': 'error',
+        'no-debugger': 'off',
         // 禁止在函数参数中出现重复名称的参数
         'no-dupe-args': 'error',
         // 禁止在对象字面量中出现重复名称的键名

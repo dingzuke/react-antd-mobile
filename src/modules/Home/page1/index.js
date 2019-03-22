@@ -55,7 +55,7 @@ class Page2 extends Component {
                             />
                         }
                     >
-                        同步redux值
+                        同步redux值:
                     </List.Item>
                 </List>
                 <WhiteSpace />
